@@ -1,9 +1,14 @@
 {
   "name": "@etm12/core.shared",
+  "description": "ETM12 shared toolbelt",
   "version": "0.1.0",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "license": "MIT",
+  "files": [
+    "dist",
+    "lib"
+  ],
   "scripts": {
     "build": "babel lib/ -d dist/ --ignore **/*.spec.js",
     "test": "jest",
@@ -26,6 +31,18 @@
     "codecov": "^3.2.0",
     "cz-conventional-changelog": "2.1.0",
     "jest": "^24.1.0"
+  },
+  "keywords": [
+    "kefir",
+    "utils"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etm12/core.shared.git"
+  },
+  "homepage": "https://github.com/etm12/core.shared#readme",
+  "bugs": {
+    "url": "https://github.com/etm12/core.shared/issues"
   },
   "config": {
     "commitizen": {
