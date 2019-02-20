@@ -1,9 +1,11 @@
 {
   "name": "@etm12/core.shared",
   "version": "0.1.0",
-  "main": "lib/index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "license": "MIT",
   "scripts": {
+    "build": "babel lib/ -d dist/ --ignore **/*.spec.js",
     "test": "jest",
     "test:cov": "npm run test -- --collectCoverage && codecov",
     "test:watch": "npm run test -- --watch"
