@@ -10,7 +10,8 @@
     "lib"
   ],
   "scripts": {
-    "build": "babel lib/ -d dist/ --ignore **/*.spec.js",
+    "build": "babel lib/ -d dist/ --ignore **/*.spec.js --source-maps",
+    "build:watch": "npm run build -- --watch",
     "test": "jest",
     "test:cov": "npm run test -- --collectCoverage && codecov",
     "test:watch": "npm run test -- --watch"
