@@ -40,16 +40,28 @@ declare namespace S {
     flip<T1, T2, R>(fn: Ary2Fn<T1, T2, R>, t2: T2): (t1: T1) => R;
     flip<T1, T2, R>(fn: Ary2Fn<T1, T2, R>): (t2: T2) => (t1: T1) => R;
 
-    invoke0<R>(m: string, f: Function): R;
+    invoker0<R>(m: string, f: Function): R;
 
-    invoke1<T1, R>(m: string, x: T1, f: Ary1Fn<T1, R>): R;
-    invoke1<T1, R>(m: string, x: T1): (f: Ary1Fn<T1, R>) => R;
-    invoke1<T1, R>(m: string): CurriedAry2<T2, R>;
+    invoker1<T1, R>(m: string, x: T1, f: Ary1Fn<T1, R>): R;
+    invoker1<T1, R>(m: string, x: T1): (f: Ary1Fn<T1, R>) => R;
+    invoker1<T1, R>(m: string): CurriedAry2<T2, R>;
 
-    invoke2<T1, T2, R>(m: string, t1: T1, t2: T2, f: Ary2Fn<T1, T2, R>): R;
-    invoke2<T1, T2, R>(m: string, t1: T1, t2: T2): (f: Ary2Fn<T1, T2, R>) => R;
-    invoke2<T1, T2, R>(m: string, t1: T1): CurriedAry2<T2, R>;
-    invoke2<T1, T2, R>(m: string): CurriedAry3<T1, T2, R>;
+    invoker2<T1, T2, R>(m: string, t1: T1, t2: T2, f: Ary2Fn<T1, T2, R>): R;
+    invoker2<T1, T2, R>(m: string, t1: T1, t2: T2): (f: Ary2Fn<T1, T2, R>) => R;
+    invoker2<T1, T2, R>(m: string, t1: T1): CurriedAry2<T2, R>;
+    invoker2<T1, T2, R>(m: string): CurriedAry3<T1, T2, R>;
+
+    persist(e: Event): void;
+
+    computeIx(x: number, y: number, w: number, m: number): number;
+    computeIx(x: number, y: number, w: number): (m: number) => number;
+    computeIx(x: number, y: number): CurriedAry2<number, number, number>;
+    computeIx(x: number): CurriedAry3<number, number, number, number>;
+
+    getIxRange(x: number, y: number, w: number, m: number): Pair<number, number>;
+    getIxRange(x: number, y: number, w: number): (m: number) => Pair<number, number>;
+    getIxRange(x: number, y: number): CurriedAry2<number, number, Pair<number, number>>;
+    getIxRange(x: number): CurriedAry3<number, number, number, Pair<number, number>>;
   }
 }
 
